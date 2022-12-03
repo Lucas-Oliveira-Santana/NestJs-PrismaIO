@@ -1,0 +1,17 @@
+services:
+    database:
+        image: postgres
+        container_name: PrismaNest
+        restart: always
+        ports:
+            - 5432:5432
+        environment:
+            - POSTGRES_USER=prisma
+            - POSTGRES_PASSWORD=prisma
+            - POSTGRES_DB=prismaNest
+        volumes:
+            - pgdata:/data/postgres
+
+volumes:
+    pgdata:
+        driver: local
